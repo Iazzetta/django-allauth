@@ -91,7 +91,7 @@ class ConnectionsView(AjaxCapableProcessFormViewMixin, FormView):
         "socialaccount/connections." +
         account_settings.TEMPLATE_EXTENSION)
     form_class = DisconnectForm
-    success_url = reverse_lazy("socialaccount_connections")
+    success_url = reverse_lazy("account:home")
 
     def get_form_class(self):
         return get_form_class(app_settings.FORMS,

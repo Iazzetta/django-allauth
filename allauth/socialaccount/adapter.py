@@ -117,7 +117,7 @@ class DefaultSocialAccountAdapter(object):
         connecting a social account.
         """
         assert request.user.is_authenticated
-        url = reverse('socialaccount_connections')
+        url = reverse('account:home')
         return url
 
     def validate_disconnect(self, account, accounts):

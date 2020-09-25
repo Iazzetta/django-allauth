@@ -93,7 +93,7 @@ def _add_social_account(request, sociallogin):
     if request.user.is_anonymous:
         # This should not happen. Simply redirect to the connections
         # view (which has a login required)
-        return HttpResponseRedirect(reverse('socialaccount_connections'))
+        return HttpResponseRedirect(reverse('account:home'))
     level = messages.INFO
     message = 'socialaccount/messages/account_connected.txt'
     action = None

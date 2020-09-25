@@ -440,10 +440,10 @@ class SocialAccountTests(TestCase):
         self.client.login(
             username=user.username,
             password=user.username)
-        resp = self.client.get(reverse('socialaccount_connections'))
+        resp = self.client.get(reverse('account:home'))
         self.assertTemplateUsed(resp, 'socialaccount/connections.html')
         resp = self.client.post(
-            reverse('socialaccount_connections'),
+            reverse('account:home'),
             {'account': account.pk})
         self.assertFalse(
             SocialAccount.objects.filter(pk=account.pk).exists())
